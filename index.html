@@ -1,0 +1,3034 @@
+
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ឃឹម វិច្ឆិកា | Portfolio</title>
+
+    <meta name="description"
+          content="Portfolio ផ្ទាល់ខ្លួនរបស់ ឃឹម វិច្ឆិកា— Web Developer និង UI/UX Designer">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           ROOT
+        ========================================= */
+
+        :root {
+            --blue: #2563eb;
+            --blue-dark: #1e3a8a;
+            --blue-light: #eff6ff;
+            --cyan: #06b6d4;
+
+            --white: #ffffff;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+
+            --radius: 18px;
+            --radius-lg: 26px;
+
+            --container: 1180px;
+
+            --shadow-sm:
+                0 8px 25px rgba(15, 23, 42, .05);
+
+            --shadow-md:
+                0 20px 50px rgba(37, 99, 235, .10);
+        }
+
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                "Kantumruy Pro",
+                "Inter",
+                sans-serif;
+
+            background: var(--bg);
+            color: var(--text);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        /* =========================================
+           CONTAINER
+        ========================================= */
+
+        .container {
+            width: min(
+                calc(100% - 40px),
+                var(--container)
+            );
+
+            margin: auto;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 1000;
+
+            padding: 16px 0;
+        }
+
+        .nav-wrapper {
+            height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 10px 0 22px;
+
+            background:
+                rgba(255,255,255,.90);
+
+            backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(226,232,240,.8);
+
+            border-radius: 18px;
+
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 17px;
+            font-weight: 700;
+
+            letter-spacing: -.03em;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+
+            display: grid;
+            place-items: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--blue-dark)
+                );
+
+            border-radius: 11px;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: #475569;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--blue);
+
+            border-radius: 10px;
+
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-button {
+            padding: 10px 17px;
+
+            color: white !important;
+
+            background: var(--blue);
+
+            border-radius: 11px;
+
+            transition: .25s ease;
+        }
+
+        .nav-button:hover {
+            background: var(--blue-dark);
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding:
+                150px 0
+                90px;
+
+            background:
+                radial-gradient(
+                    circle at 85% 25%,
+                    rgba(37,99,235,.10),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(6,182,212,.07),
+                    transparent 25%
+                );
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.15fr
+                .85fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 12px;
+
+            color: var(--blue);
+
+            background: var(--blue-light);
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 999px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            margin-bottom: 24px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+
+            background: #22c55e;
+
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            max-width: 700px;
+
+            font-family: "Kantumruy Pro", sans-serif;
+
+            font-size:
+                clamp(46px, 7vw, 82px);
+
+            line-height: 1.05;
+
+            letter-spacing: -.06em;
+
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero-description {
+            max-width: 610px;
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 32px;
+        }
+
+        .btn {
+            min-height: 48px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 20px;
+
+            border-radius: 12px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+        .btn-primary {
+            color: white;
+
+            background: var(--blue);
+
+            box-shadow:
+                0 10px 25px
+                rgba(37,99,235,.20);
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: var(--text);
+
+            background: white;
+
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            color: var(--blue);
+
+            border-color:
+                #bfdbfe;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           HERO RIGHT CARD
+        ========================================= */
+
+        .hero-visual {
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            position: relative;
+
+            width: min(100%, 390px);
+
+            padding: 14px;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                var(--radius-lg);
+
+            box-shadow:
+                0 30px 80px
+                rgba(37,99,235,.12);
+        }
+
+        .profile-inner {
+            min-height: 470px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content:
+                space-between;
+
+            padding: 28px;
+
+            overflow: hidden;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--blue-dark),
+                    var(--blue)
+                );
+
+            border-radius: 20px;
+
+            position: relative;
+        }
+
+        .profile-inner::before {
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            right: -80px;
+            top: -80px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.08);
+        }
+
+        .profile-inner::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            left: -90px;
+            bottom: -70px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.06);
+        }
+
+        .profile-top {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            position: relative;
+            z-index: 2;
+
+            color:
+                rgba(255,255,255,.7);
+
+            font-size: 11px;
+        }
+
+        .profile-name {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-name strong {
+            display: block;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 82px;
+
+            line-height: .9;
+
+            letter-spacing: -.09em;
+        }
+
+        .profile-name span {
+            display: block;
+
+            margin-top: 15px;
+
+            color:
+                rgba(255,255,255,.75);
+
+            font-size: 13px;
+        }
+
+        .profile-bottom {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            justify-content:
+                space-between;
+
+            gap: 20px;
+
+            font-size: 11px;
+
+            color:
+                rgba(255,255,255,.7);
+        }
+
+
+        /* =========================================
+           SECTION
+        ========================================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-header {
+            display: flex;
+
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: var(--blue);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: .12em;
+        }
+
+        .section-title {
+            margin-top: 8px;
+
+            font-size:
+                clamp(32px, 5vw, 52px);
+
+            line-height: 1.1;
+
+            letter-spacing: -.05em;
+
+            font-weight: 700;
+        }
+
+        .section-description {
+            max-width: 420px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about {
+            background: white;
+
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                .8fr
+                1.2fr;
+
+            gap: 90px;
+        }
+
+        .about-main {
+            color: #475569;
+
+            font-size: 17px;
+
+            line-height: 2;
+        }
+
+        .about-main strong {
+            color: var(--text);
+        }
+
+        .about-right {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        .info-card {
+            padding: 24px;
+
+            background:
+                var(--bg);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                var(--radius);
+
+            transition: .25s ease;
+        }
+
+        .info-card:hover {
+            border-color:
+                #bfdbfe;
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                var(--shadow-sm);
+        }
+
+        .info-icon {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            color: var(--blue);
+
+            background:
+                var(--blue-light);
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .info-card span {
+            display: block;
+
+            margin-top: 22px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+        .info-card strong {
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           SERVICES
+        ========================================= */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .service-card {
+            padding: 30px;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                var(--radius-lg);
+
+            transition: .3s ease;
+        }
+
+        .service-card:hover {
+            transform:
+                translateY(-6px);
+
+            border-color:
+                #bfdbfe;
+
+            box-shadow:
+                var(--shadow-md);
+        }
+
+        .service-number {
+            color:
+                #94a3b8;
+
+            font-family:
+                "Inter", sans-serif;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            margin-top: 35px;
+
+            color: white;
+
+            background:
+                var(--blue);
+
+            border-radius: 13px;
+
+            font-family: "Inter";
+            font-weight: 700;
+        }
+
+        .service-card h3 {
+            margin-top: 20px;
+
+            font-size: 20px;
+
+            letter-spacing: -.03em;
+        }
+
+        .service-card p {
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           TECH STACK
+        ========================================= */
+
+        .tech-section {
+            background: var(--blue-light);
+
+            border-top:
+                1px solid #dbeafe;
+
+            border-bottom:
+                1px solid #dbeafe;
+        }
+
+        .tech-tabs {
+            display: flex;
+
+            gap: 8px;
+
+            overflow-x: auto;
+
+            padding-bottom: 10px;
+
+            scrollbar-width: none;
+        }
+
+        .tech-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tech-tab {
+            flex:
+                0 0 auto;
+
+            padding: 10px 16px;
+
+            background: white;
+
+            border:
+                1px solid
+                #dbeafe;
+
+            border-radius: 10px;
+
+            color: #64748b;
+
+            cursor: pointer;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+        .tech-tab:hover,
+        .tech-tab.active {
+            color: white;
+
+            background:
+                var(--blue);
+
+            border-color:
+                var(--blue);
+        }
+
+        .tech-content {
+            margin-top: 25px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+        .tech-item {
+            padding: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            background: white;
+
+            border:
+                1px solid
+                #dbeafe;
+
+            border-radius: 14px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+        .tech-item:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                var(--shadow-sm);
+        }
+
+        .tech-logo {
+            width: 34px;
+            height: 34px;
+
+            display: grid;
+            place-items: center;
+
+            color: var(--blue);
+
+            background:
+                var(--blue-light);
+
+            border-radius: 9px;
+
+            font-family:
+                "Inter";
+
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           PROJECTS
+        ========================================= */
+
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .project-card {
+            overflow: hidden;
+
+            background:
+                var(--bg);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                var(--radius-lg);
+
+            transition: .3s ease;
+        }
+
+        .project-card:hover {
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                var(--shadow-md);
+        }
+
+        .project-preview {
+            height: 290px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #dbeafe
+                );
+        }
+
+        .browser {
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            background: white;
+
+            border:
+                1px solid
+                #dbeafe;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 20px 40px
+                rgba(37,99,235,.12);
+        }
+
+        .browser-bar {
+            height: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            padding: 0 10px;
+
+            background: #f8fafc;
+
+            border-bottom:
+                1px solid
+                var(--border);
+        }
+
+        .browser-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #cbd5e1;
+        }
+
+        .browser-content {
+            padding: 22px;
+        }
+
+        .browser-title {
+            width: 55%;
+            height: 10px;
+
+            background:
+                var(--blue);
+
+            border-radius: 10px;
+        }
+
+        .browser-line {
+            width: 75%;
+            height: 7px;
+
+            margin-top: 10px;
+
+            background:
+                #e2e8f0;
+
+            border-radius: 10px;
+        }
+
+        .browser-boxes {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 8px;
+
+            margin-top: 25px;
+        }
+
+        .browser-box {
+            height: 70px;
+
+            background:
+                var(--blue-light);
+
+            border-radius: 8px;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-meta {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            color: #94a3b8;
+
+            font-family:
+                "Inter";
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .project-info h3 {
+            margin-top: 12px;
+
+            font-size: 21px;
+
+            letter-spacing:
+                -.04em;
+        }
+
+        .project-info p {
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .project-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 16px;
+        }
+
+        .project-tags span {
+            padding: 5px 9px;
+
+            color: var(--blue);
+
+            background:
+                var(--blue-light);
+
+            border-radius: 7px;
+
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact {
+            background:
+                var(--bg);
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                .8fr
+                1.2fr;
+
+            gap: 80px;
+        }
+
+        .contact-text {
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+        .contact-list {
+            margin-top: 35px;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 15px;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 13px;
+        }
+
+        .contact-icon {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            color: var(--blue);
+
+            background:
+                var(--blue-light);
+
+            border-radius: 10px;
+
+            font-family:
+                "Inter";
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .contact-item small {
+            display: block;
+
+            color: #94a3b8;
+
+            font-size: 10px;
+        }
+
+        .contact-item strong {
+            display: block;
+
+            margin-top: 1px;
+
+            font-size: 13px;
+        }
+
+        .contact-form {
+            padding: 30px;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                var(--radius-lg);
+
+            box-shadow:
+                var(--shadow-sm);
+        }
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: #475569;
+
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        img{
+          border-radius: 1rem;
+        }
+        .input {
+            width: 100%;
+
+            min-height: 48px;
+
+            padding: 0 14px;
+
+            color: var(--text);
+
+            background:
+                #f8fafc;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 11px;
+
+            outline: none;
+
+            transition: .25s ease;
+        }
+
+        textarea.input {
+            min-height: 130px;
+
+            padding: 14px;
+
+            resize: vertical;
+        }
+
+        .input:focus {
+            background: white;
+
+            border-color:
+                var(--blue);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(37,99,235,.08);
+        }
+
+        .form-button {
+            margin-top: 18px;
+
+            border: none;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            color: #cbd5e1;
+
+            background:
+                #0f172a;
+
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.3fr
+                .7fr
+                .7fr
+                .7fr;
+
+            gap: 50px;
+
+            padding-bottom: 45px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .footer-brand {
+            max-width: 320px;
+        }
+
+        .footer-logo {
+            color: white;
+
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            margin-top: 15px;
+
+            color: #94a3b8;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: grid;
+
+            gap: 9px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+
+            font-size: 11px;
+
+            transition: .2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-tech {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+        }
+
+        .footer-tech span {
+            padding: 5px 8px;
+
+            color: #cbd5e1;
+
+            background:
+                rgba(255,255,255,.06);
+
+            border-radius: 6px;
+
+            font-family:
+                "Inter";
+
+            font-size: 9px;
+        }
+
+        .footer-bottom {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding-top: 22px;
+        }
+
+        .footer-bottom p {
+            color: #64748b;
+
+            font-size: 10px;
+        }
+
+        .social-links {
+            display: flex;
+
+            gap: 18px;
+        }
+
+        .social-links a {
+            color: #94a3b8;
+
+            font-size: 10px;
+
+            font-weight: 600;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .hero-visual {
+                justify-content:
+                    flex-start;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .tech-content {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .container {
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--container)
+                    );
+            }
+
+            .nav-wrapper {
+                padding-left: 14px;
+            }
+
+            .logo {
+                font-size: 14px;
+            }
+
+            .logo-mark {
+                width: 32px;
+                height: 32px;
+            }
+
+            .nav-button {
+                padding: 9px 12px;
+            }
+
+            .hero {
+                padding:
+                    125px 0
+                    70px;
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        44px,
+                        15vw,
+                        68px
+                    );
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .section-description {
+                margin-top: 18px;
+            }
+
+            .about-right {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-preview {
+                height: 240px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+
+                align-items:
+                    flex-start;
+            }
+        }
+
+
+        
+
+    </style>
+</head>
+
+
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+    <div class="container">
+
+        <nav class="nav-wrapper">
+
+            <a href="#home" class="logo">
+
+                <span class="logo-mark">
+                    KV
+                </span>
+
+                <span>
+                    KHIM VICHEKA
+                </span>
+
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">
+                        ទំព័រដើម
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        អំពីខ្ញុំ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services">
+                        សេវាកម្ម
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#stack">
+                        បច្ចេកវិទ្យា
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        គម្រោង
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <a href="#contact"
+               class="nav-button">
+
+                ទាក់ទងខ្ញុំ
+
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+
+            <!-- LEFT -->
+
+            <div>
+
+                <div class="hero-badge">
+
+                    <span class="badge-dot"></span>
+
+                    បើកចំហសម្រាប់ឱកាសថ្មី
+
+                </div>
+
+
+                <h1>
+
+                    សួស្តី ខ្ញុំគឺ
+                    <span>
+                        ឃឹម ​វិច្ឆិកា                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    ខ្ញុំជាអ្នកអភិវឌ្ឍន៍ Web ដែលចូលចិត្ត
+                    បង្កើត Website និង Web Application
+                    ដែលមាន Design ស្អាត ងាយប្រើ
+                    និងអាចប្រើប្រាស់បានជាក់ស្តែង។
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#projects"
+                       class="btn btn-primary">
+
+                        មើលគម្រោង
+
+                    </a>
+
+
+                    <a href="#contact"
+                       class="btn btn-outline">
+
+                        ទាក់ទងខ្ញុំ
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <!-- <div class="hero-visual">
+
+                <div class="profile-card">
+
+                    <div class="profile-inner">
+
+
+                        <div class="profile-top">
+
+                            <span>
+                                PORTFOLIO
+                            </span>
+
+                            <span>
+                                2026
+                            </span>
+
+                        </div>
+
+
+                        <div class="profile-name">
+
+                            <strong>
+                                KV
+                            </strong>
+
+                            <span>
+                                Web Developer · UI/UX
+                            </span>
+
+                        </div>
+
+
+                        <div class="profile-bottom">
+
+                            <span>
+                                KHIM VICHEKA
+                            </span>
+
+                            <span>
+                                CAMBODIA
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div> -->
+            <div class="hero-visual">
+              <div class="profile-card">
+                <img src="/image/image.png" width="360" alt="">
+              </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+                    01 — អំពីខ្ញុំ
+                </div>
+
+                <h2 class="section-title">
+                    អំពីខ្ញុំ
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+
+                ខ្ញុំផ្តោតលើការបង្កើត Digital Product
+                ដែលមានភាពស្អាត សាមញ្ញ និងងាយស្រួលប្រើ។
+
+            </p>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+            <!-- LEFT -->
+
+            <div>
+
+                <p class="about-main">
+
+                    ខ្ញុំឈ្មោះ
+                    <strong>ឃឹ​ម វិច្ឆិកា</strong>។
+
+                    ខ្ញុំចាប់អារម្មណ៍លើ
+                    Web Development,
+                    UI/UX Design និង
+                    Software Development។
+
+                    ខ្ញុំចូលចិត្តបម្លែងគំនិត
+                    ទៅជាប្រព័ន្ធដែលអាចប្រើប្រាស់
+                    បានពិតប្រាកដ។
+
+                </p>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="about-right">
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        01
+                    </div>
+
+                    <span>
+                        ជំនាញ
+                    </span>
+
+                    <strong>
+                        Web Development
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        02
+                    </div>
+
+                    <span>
+                        ការផ្តោត
+                    </span>
+
+                    <strong>
+                        UI / UX Design
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        03
+                    </div>
+
+                    <span>
+                        ទីតាំង
+                    </span>
+
+                    <strong>
+                        កម្ពុជា
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        04
+                    </div>
+
+                    <span>
+                        ការងារ
+                    </span>
+
+                    <strong>
+                        Digital Products
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section id="services">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+                    02 — សេវាកម្ម
+                </div>
+
+                <h2 class="section-title">
+                    អ្វីដែលខ្ញុំអាចធ្វើ
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+
+                បង្កើត Website និង Web Application
+                ដែលមាន Design ស្អាត និងផ្តោតលើ User Experience។
+
+            </p>
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <div class="service-icon">
+                    WEB
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    បង្កើត Website ដែល Responsive
+                    និងអាចប្រើបានលើ Mobile និង Desktop។
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <div class="service-icon">
+                    UI
+                </div>
+
+                <h3>
+                    UI / UX Design
+                </h3>
+
+                <p>
+                    រៀបចំ Interface ដែលស្អាត
+                    ងាយយល់ និងងាយស្រួលប្រើប្រាស់។
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <div class="service-icon">
+                    APP
+                </div>
+
+                <h3>
+                    Web Application
+                </h3>
+
+                <p>
+                    បង្កើត Web Application
+                    សម្រាប់ដោះស្រាយបញ្ហាក្នុងការងារជាក់ស្តែង។
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     TECH STACK
+========================================= -->
+
+<section class="tech-section" id="stack">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+                    03 — បច្ចេកវិទ្យា
+                </div>
+
+                <h2 class="section-title">
+                    Tech Stack
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+
+                បច្ចេកវិទ្យាដែលខ្ញុំប្រើសម្រាប់
+                Design និង Development។
+
+            </p>
+
+        </div>
+
+
+
+        <!-- CATEGORY ROW -->
+
+        <div class="tech-tabs">
+
+            <button
+                class="tech-tab active">
+                Frontend
+            </button>
+
+            <button
+                class="tech-tab">
+                Backend
+            </button>
+
+            <button
+                class="tech-tab">
+                Database
+            </button>
+
+            <button
+                class="tech-tab">
+                Programming
+            </button>
+
+            <button
+                class="tech-tab">
+                Tools
+            </button>
+
+            <button
+                class="tech-tab">
+                Deployment
+            </button>
+
+        </div>
+
+
+
+        <!-- TECH ROW -->
+
+        <div class="tech-content">
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    HTML
+                </div>
+
+                HTML5
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    CSS
+                </div>
+
+                CSS3
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    JS
+                </div>
+
+                JavaScript
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    RE
+                </div>
+
+                React
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    VT
+                </div>
+
+                Vite
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    BO
+                </div>
+
+                Bootstrap
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    ND
+                </div>
+
+                Node.js
+
+            </div>
+
+
+            <div class="tech-item">
+
+                <div class="tech-logo">
+                    EX
+                </div>
+
+                Express
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROJECTS
+========================================= -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+                    04 — គម្រោង
+                </div>
+
+                <h2 class="section-title">
+                    គម្រោងរបស់ខ្ញុំ
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+
+                គម្រោងដែលខ្ញុំបានសិក្សា
+                និងអភិវឌ្ឍសម្រាប់ការប្រើប្រាស់ជាក់ស្តែង។
+
+            </p>
+
+        </div>
+
+
+
+        <div class="project-grid">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project-card">
+
+                <div class="project-preview">
+
+                    <div class="browser">
+
+                        <div class="browser-bar">
+
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+
+                        </div>
+
+
+                        <div class="browser-content">
+
+                            <div class="browser-title"></div>
+
+                            <div class="browser-line"></div>
+
+                            <div class="browser-boxes">
+
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-info">
+
+                    <div class="project-meta">
+
+                        <span>
+                            PROJECT 01
+                        </span>
+
+                        <span>
+                            2026
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Smart Menu Platform
+                    </h3>
+
+                    <p>
+                        ប្រព័ន្ធ Digital Menu និង
+                        Restaurant Ordering Platform
+                        សម្រាប់ភោជនីយដ្ឋាន។
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>
+                            React
+                        </span>
+
+                        <span>
+                            Node.js
+                        </span>
+
+                        <span>
+                            MySQL
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project-card">
+
+                <div class="project-preview">
+
+                    <div class="browser">
+
+                        <div class="browser-bar">
+
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+
+                        </div>
+
+
+                        <div class="browser-content">
+
+                            <div class="browser-title"></div>
+
+                            <div class="browser-line"></div>
+
+                            <div class="browser-boxes">
+
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-info">
+
+                    <div class="project-meta">
+
+                        <span>
+                            PROJECT 02
+                        </span>
+
+                        <span>
+                            2026
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Smart Business System
+                    </h3>
+
+                    <p>
+                        ប្រព័ន្ធគ្រប់គ្រងអាជីវកម្ម
+                        សម្រាប់គ្រប់គ្រងការលក់
+                        Stock និង Reports។
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>
+                            Laravel
+                        </span>
+
+                        <span>
+                            PHP
+                        </span>
+
+                        <span>
+                            MySQL
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project-card">
+
+                <div class="project-preview">
+
+                    <div class="browser">
+
+                        <div class="browser-bar">
+
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+
+                        </div>
+
+
+                        <div class="browser-content">
+
+                            <div class="browser-title"></div>
+
+                            <div class="browser-line"></div>
+
+                            <div class="browser-boxes">
+
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-info">
+
+                    <div class="project-meta">
+
+                        <span>
+                            PROJECT 03
+                        </span>
+
+                        <span>
+                            2026
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Personal Portfolio
+                    </h3>
+
+                    <p>
+                        Personal Portfolio Website
+                        សម្រាប់បង្ហាញជំនាញ
+                        និងគម្រោង។
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project-card">
+
+                <div class="project-preview">
+
+                    <div class="browser">
+
+                        <div class="browser-bar">
+
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+
+                        </div>
+
+
+                        <div class="browser-content">
+
+                            <div class="browser-title"></div>
+
+                            <div class="browser-line"></div>
+
+                            <div class="browser-boxes">
+
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+                                <div class="browser-box"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-info">
+
+                    <div class="project-meta">
+
+                        <span>
+                            PROJECT 04
+                        </span>
+
+                        <span>
+                            2026
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Business Website
+                    </h3>
+
+                    <p>
+                        Website សម្រាប់បង្ហាញ
+                        Brand សេវាកម្ម និងព័ត៌មានអាជីវកម្ម។
+                    </p>
+
+
+                    <div class="project-tags">
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-label">
+                    05 — ទំនាក់ទំនង
+                </div>
+
+                <h2 class="section-title">
+                    តោះចាប់ផ្តើម
+                    គម្រោងមួយជាមួយគ្នា
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+
+                ប្រសិនបើអ្នកមានគម្រោង
+                ឬគំនិតថ្មី អ្នកអាចទាក់ទងមកខ្ញុំបាន។
+
+            </p>
+
+        </div>
+
+
+
+        <div class="contact-grid">
+
+
+            <!-- LEFT -->
+
+            <div>
+
+                <p class="contact-text">
+
+                    ខ្ញុំតែងតែចាប់អារម្មណ៍
+                    ចំពោះគម្រោងថ្មីៗ
+                    និងឱកាសក្នុងការរៀនសូត្រ
+                    និងបង្កើតអ្វីដែលមានប្រយោជន៍។
+
+                </p>
+
+
+                <div class="contact-list">
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            @
+                        </div>
+
+                        <div>
+
+                            <small>
+                                អ៊ីមែល
+                            </small>
+
+                            <strong>
+                                hello@example.com
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            KH
+                        </div>
+
+                        <div>
+
+                            <small>
+                                ទីតាំង
+                            </small>
+
+                            <strong>
+                                កម្ពុជា
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            IN
+                        </div>
+
+                        <div>
+
+                            <small>
+                                LinkedIn
+                            </small>
+
+                            <strong>
+                                Khim Vicheka
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <form class="contact-form">
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            ឈ្មោះ
+                        </label>
+
+                        <input
+                            class="input"
+                            type="text"
+                            placeholder="បញ្ចូលឈ្មោះរបស់អ្នក"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            អ៊ីមែល
+                        </label>
+
+                        <input
+                            class="input"
+                            type="email"
+                            placeholder="example@email.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            ប្រធានបទ
+                        </label>
+
+                        <input
+                            class="input"
+                            type="text"
+                            placeholder="ប្រធានបទសារ"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            សារ
+                        </label>
+
+                        <textarea
+                            class="input"
+                            placeholder="សរសេរសាររបស់អ្នក..."
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary form-button">
+
+                    ផ្ញើសារ
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    KHIM VICHEKA
+                </div>
+
+                <p>
+
+                    Web Developer ដែលចូលចិត្ត
+                    បង្កើត Digital Product
+                    ដែលស្អាត សាមញ្ញ
+                    និងមានប្រយោជន៍។
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <div class="footer-title">
+                    Navigation
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="#home">
+                        ទំព័រដើម
+                    </a>
+
+                    <a href="#about">
+                        អំពីខ្ញុំ
+                    </a>
+
+                    <a href="#projects">
+                        គម្រោង
+                    </a>
+
+                    <a href="#contact">
+                        ទំនាក់ទំនង
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <div class="footer-title">
+                    Tech Stack
+                </div>
+
+                <div class="footer-tech">
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        React
+                    </span>
+
+                    <span>
+                        Node.js
+                    </span>
+
+                    <span>
+                        MySQL
+                    </span>
+
+                    <span>
+                        Git
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <div class="footer-title">
+                    Social
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        GitHub
+                    </a>
+
+                    <a href="#">
+                        LinkedIn
+                    </a>
+
+                    <a href="#">
+                        Facebook
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 KHIM VICHEKA. រក្សាសិទ្ធិគ្រប់យ៉ាង។
+            </p>
+
+
+            <div class="social-links">
+
+                <a href="#">
+                    GitHub
+                </a>
+
+                <a href="#">
+                    LinkedIn
+                </a>
+
+                <a href="#">
+                    Facebook
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+</body>
+</html>
+
